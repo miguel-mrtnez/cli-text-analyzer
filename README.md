@@ -2,14 +2,11 @@
 
 A minimal `wc` implementation.
 
-
-## Usage
-
----
-
 ```bash
 cargo run -- [OPTION] ... <FILE> ...
 ```
+
+Reads one or more files and prints the specified counts. When no flags are provided, lines, words and char counts are displayed. At least one FILE path must be passed.
 
 | Option             | Description                                |   
 |--------------------|--------------------------------------------|
@@ -19,9 +16,4 @@ cargo run -- [OPTION] ... <FILE> ...
 | `--b`, `--bytes`   | Count the number of bytes.                 |
 | `--t`, `--top <n>` | Print the top `n` most frequent words.     |
 
-
-Default behavior (no flags provided) equals to:
-
-```bash
-cargo run -- --lines --words --chars <FILE> ...
-```
+A word is considered a nonempty sequence of non white spaces, delimited by white space characters, or the limits of the file.
